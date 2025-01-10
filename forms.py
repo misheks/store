@@ -24,3 +24,10 @@ class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Login')
+
+class BuyForm(FlaskForm):
+    id_number = StringField('ID Number', validators=[DataRequired(), Length(max=11)])
+    phone_number = StringField('Phone Number', validators=[DataRequired(), Length(max=9)])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    address = StringField('Address', validators=[DataRequired()])
+    submit = SubmitField('Place Order')
