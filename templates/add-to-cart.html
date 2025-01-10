@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Form</h1>
+    <form action="/buy" method="post">
+    {{ form.name(class="form-control mt-2", placeholder="Username") }}
+    {{ form.id_number(class="form-control mt-2", placeholder="ID") }}
+    {{ form.card_number(class="form-control mt-2", placeholder="Card_Number") }}
+    {{ form.submit(class="bg-warning mt-2 form-control") }}
+</form>
+{% endblock %}

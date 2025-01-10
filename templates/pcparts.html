@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}PC Parts{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">PC Parts</h1>
+<div class="row">
+    {% for pc_part in pcparts %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <img src="{{ pc_part.img }}" class="card-img-top" alt="{{ pc_part.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ pc_part.name }}</h5>
+                <p class="card-text">{{ pc_part.description }}</p>
+                <p class="card-text"><strong>${{ pc_part.price }}</strong></p>
+                <a href="/pcparts/{{ pc_part.id }}" class="btn btn-primary w-100">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

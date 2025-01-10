@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Complete Your Purchase{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Complete Your Purchase</h1>
+    <form method="POST" action="/buy">
+        <div class="form-group mb-3">
+            <label for="id_number">ID Number</label>
+            <input type="text" id="id_number" name="id_number" class="form-control" maxlength="11" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="phone_number">Phone Number</label>
+            <input type="text" id="phone_number" name="phone_number" class="form-control" maxlength="9" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" class="form-control" rows="3" required></textarea>
+        </div>
+        <a href="/purchase_confirmation"><button type="submit" class="btn btn-success">Confirm Purchase</button></a>
+    </form>
+</div>
+{% endblock %}
